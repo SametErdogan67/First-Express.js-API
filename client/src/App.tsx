@@ -2,9 +2,14 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 
+interface Pet {
+  name: string;
+  type: string;
+}
+
 function App() {
   const [count, setCount] = useState(0);
-  const [pets, setPets] = useState([]);
+  const [pets, setPets] = useState<Pet[]>([]); // Pets için tür tanımlandı
 
   const fetchApi = async () => {
     try {
